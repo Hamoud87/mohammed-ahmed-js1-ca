@@ -7,22 +7,29 @@ if (name === null) {
   location.href = "/";
 }
 console.log(name);
+
 const url = "https://restcountries.eu/rest/v2/name/" + name;
 console.log(url);
+
 async function fetchCountry() {
   try {
     const response = await fetch(url);
     const json = await response.json();
-    createHtml(json);
+    countryDetails.innerHTML = "";
+    countryDetails.innerHTML += `<h1 class="country-details">${json[0].name}</h1>
+    <img src="${json[0].flag}" alt="${json[0].name}">
+    <div class="country-info">
+    <p>Numericcode: ${json[0].numericCode}</p> 
+    <p>City: ${json[0].capital}</p> 
+    <p>Region: ${json[0].region}</p> 
+    <p>Subregion: ${json[0].subregion}</p> 
+    <p>Population: ${json[0].population}</p> 
+    <p>Language: ${json[0].languages[0].name}</p>  
+    </div>
+     <a href="index.html"><button>Get Back</button></a>
+    `;
   } catch (error) {
-    countryDetails.innerHTML = "Unxepected error occured";
+    countryDetails.innerHTML = "Unexpected error occurred";
   }
 }
 fetchCountry();
-function createHtml(details) {
-  countryDetails.innerHTML += `<h1>${details.name}</h1>
-    <img class="imagestyle" src="${details.flag}" alt="${details.name}">
-    <p>city: ${details.capital}</p> 
-                 
-    `;
-}
