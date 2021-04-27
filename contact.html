@@ -8,48 +8,39 @@
   </head>
   <body>
     <main>
-      <div>
-        <h1>Result</h1>
-
-        <div class="country-details">
-          <div class="loader"></div>
-        </div>
-      </div>
-      <div class="container">
-        <select>
-          <option value="">Select an option</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-      </div>
-      <div class="circles"></div>
-      <div id="message"></div>
-      <form>
+      <h1>Form</h1>
+      <form class="formcontainer" id="contactform">
         <div>
           <label>
-            First name (required)
-            <input name="firstName" id="firstName" />
+            Name (required)
+            <input name="name" id="name" />
           </label>
+          <div class="validation-error" id="nameerror">You must enter your name</div>
         </div>
-
         <div>
           <label>
-            Last name (minimum 4 characters)
-            <input name="lastName" id="lastName" />
+            Subject (minimum 10 characters)
+            <textarea name="textarea" id="textarea"></textarea>
           </label>
+          <div class="validation-error" id="subjecterror">Subject must have minimum 10 characters</div>
         </div>
-
         <div>
           <label>
             Email (required)
             <input name="email" id="email" />
           </label>
+          <div class="validation-error" id="emailerror">This is not a valid email address. Please write the address like this: example@company.com</div>
         </div>
-
-        <button disabled>Send</button>
+        <div>
+          <label>
+            address (minimum 25 characters)
+            <input name="address" id="address" />
+          </label>
+          <div class="validation-error" id="addresserror">Address must have minimum 25 characters</div>
+        </div>
+        <button>Send</button>
       </form>
     </main>
+    <script src="js/contact.js"></script>
   </body>
 </html>

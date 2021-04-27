@@ -1,16 +1,44 @@
 body {
-  background-color: lightgrey;
+  background-color: #003f63;
   text-align: center;
 }
+.loading-indicator {
+  width: 50px;
+  height: 50px;
+  margin: 200px auto;
+  border: 10px solid rgb(0, 128, 0, 0.5);
+  border-radius: 50%;
+  border-top-color: yellow;
+  border-right-color: red;
+  border-left-color: lightblue;
+  animation: spin 1s infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* home page */
 .imagestyle {
   text-align: center;
-
   max-width: 250px;
   border: 5px solid white;
   background-color: lightblue;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 20px;
   margin: 10px 20px;
+}
+h1 {
+  color: yellow;
+}
+.error {
+  margin: 20px auto;
+  max-width: 300px;
+  background-color: red;
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 10px;
 }
 
 /* details page */
@@ -34,20 +62,19 @@ body {
 .country-info p {
   border-bottom: 2px solid grey;
 }
-.loading-indicator {
-  width: 50px;
-  height: 50px;
-  margin: 10px auto;
-  border: 10px solid rgb(0, 128, 0, 0.5);
 
-  border-radius: 50%;
-  border-top-color: yellow;
-  border-right-color: red;
-  border-left-color: lightblue;
-  animation: spin 1s infinite;
+/* contact page */
+.formcontainer {
+  margin: 60px auto;
+  max-width: 50%;
+  min-height: 300px;
+  background-color: #90cbfb;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
+.validation-error {
+  display: none;
+  color: red;
 }

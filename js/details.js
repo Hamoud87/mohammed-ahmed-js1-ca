@@ -13,23 +13,23 @@ console.log(url);
 
 async function fetchCountry() {
   try {
-    countryDetails.innerHTML = "";
     const response = await fetch(url);
     const json = await response.json();
+    countryDetails.innerHTML = "";
     countryDetails.innerHTML += `<h1 class="country-details">${json[0].name}</h1>
-    <img src="${json[0].flag}" alt="${json[0].name}">
-    <div class="country-info">
-    <p>Numericcode: ${json[0].numericCode}</p> 
-    <p>City: ${json[0].capital}</p> 
-    <p>Region: ${json[0].region}</p> 
-    <p>Subregion: ${json[0].subregion}</p> 
-    <p>Population: ${json[0].population}</p> 
-    <p>Language: ${json[0].languages[0].name}</p>  
-    </div>
-     <a href="index.html"><button>Get Back</button></a>
-    `;
+                                 <img src="${json[0].flag}" alt="${json[0].name}">
+                                 <div class="country-info">
+                                    <p>Numericcode: ${json[0].numericCode}</p> 
+                                    <p>City: ${json[0].capital}</p> 
+                                    <p>Region: ${json[0].region}</p> 
+                                    <p>Subregion: ${json[0].subregion}</p> 
+                                    <p>Population: ${json[0].population}</p> 
+                                    <p>Language: ${json[0].languages[0].name}</p>  
+                                 </div>
+                                 <a href="index.html"><button>Get Back</button></a>`;
   } catch (error) {
-    countryDetails.innerHTML = "Unexpected error occurred";
+    console.log(error);
+    countryDetails.innerHTML = `<div class="error">Unexpected error occured</d>`;
   }
 }
 fetchCountry();

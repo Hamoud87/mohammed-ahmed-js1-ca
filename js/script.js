@@ -12,11 +12,11 @@ async function fetchCountries() {
       const flags = json[i].flag;
       flagsContainer.innerHTML += ` <a href="details.html?name=${countryName}">
                                        <img class="imagestyle" src="${flags}" alt="${countryName}">
-                                    </a> `;
+                                    </a>`;
     }
   } catch (error) {
     console.log(error);
-    flagsContainer.innerHTML = "Uxpected error occured";
+    flagsContainer.innerHTML = `<div class="error">Unexpected error occured</d>`;
   }
 }
 fetchCountries();
